@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Circle Scramble</title>
+    <style>
+      .circles{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .redCircle{
+        background-color: red;
+      }
+      .blueCircle{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='points'>0</div>
+    <div class="circles redCircle"></div>
+    <div class="circles blueCircle"></div>
+    <div class="circles blueCircle"></div>
+
+    <script>
+      var circles = document.getElementsByClassName('circles');
+        function moveCircles(){
+          for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i];
+
+            var left = Math.floor(Math.random() * 100) + 1;
+            var top = Math.floor(Math.random() * 100) + 1;
+
+            circle.style.left = `${left}%`;
+            circle.style.top = `${top}%`;
+         }
+        }
+        setInterval(moveCircles, 1000);
+
+        // setInterval(,3000);
+    /*
+       for (var i = 0; i < circles.length; i++) {
+            var circle = circles[i]
+            circle.addEventListener('click',getPoints);
+       }
+
+        function getPoints(event){
+        if (event.target.className == "circle.redCircle") {
+          var points = 20;
+        } else {
+          var pointsHTML = doc.getElementById('points');
+          pointsHTML.innerHTML = xpoints
+        }
+        parseInt(pointsHTML.innerHTML)+ points;
+      }
+    */
+    </script>
+
+  </body>
+</html>
